@@ -7,9 +7,21 @@ import react from '@astrojs/react';
 
 import mdx from '@astrojs/mdx';
 
+import tailwindcss from '@tailwindcss/vite';
+
 // https://astro.build/config
 export default defineConfig({
   adapter: cloudflare(),
   site: 'https://matthewfelske.com',
-  integrations: [react(), mdx()]
+  trailingSlash: 'always',
+  integrations: [react(), mdx()],
+  markdown: {
+    syntaxHighlight: 'shiki',
+    shikiConfig: {
+      theme: 'monokai'
+    }
+  },
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });

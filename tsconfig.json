@@ -2,20 +2,20 @@
   "extends": "astro/tsconfigs/strict",
   "include": [
     ".astro/types.d.ts",
-    "**/*"
+    "**/*",
   ],
   "exclude": [
     "dist"
   ],
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "resolveJsonModule": true,
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@images/*": ["src/images/*"],
-      "@styles/*": ["src/styles/*"],
-      "@layouts/*": ["src/layouts/*"]
+      "@/*": ["./src/*"]
     }
   }
 }
